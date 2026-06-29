@@ -1,1 +1,181 @@
-<h1>Hello, World! I am a Frontend Developer</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend Developer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap');
+        
+        body {
+            font-family: 'Geist', sans-serif;
+            background-color: #0a0a0a;
+        }
+        
+        code, .monospace {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        
+        /* Animated underline on hero title */
+        .hero-title::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background-color: #64748b;
+            margin-top: 8px;
+            animation: expandWidth 0.8s ease-out 0.3s forwards;
+        }
+        
+        @keyframes expandWidth {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+        
+        /* Subtle hover effect on project cards */
+        .project-card {
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-4px);
+            border-color: #64748b;
+        }
+    </style>
+</head>
+<body class="text-gray-100">
+    <!-- Header -->
+    <header class="border-b border-gray-800 sticky top-0 bg-black/80 backdrop-blur-sm z-50">
+        <nav class="max-w-4xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="monospace text-sm font-semibold tracking-tight text-gray-300">
+                v.dev
+            </div>
+            <div class="space-x-6 text-sm text-gray-400">
+                <a href="#work" class="hover:text-gray-100 transition">Work</a>
+                <a href="#contact" class="hover:text-gray-100 transition">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="max-w-4xl mx-auto px-6 py-24 md:py-32">
+        <div class="space-y-6">
+            <h1 class="hero-title text-4xl md:text-5xl font-bold leading-tight">
+                Building with AI
+            </h1>
+            <p class="text-lg text-gray-400 max-w-2xl leading-relaxed">
+                Frontend developer focused on modern web experiences. Learning to code smarter—not just faster—by combining intentional design with AI-assisted development.
+            </p>
+            <div class="flex gap-4 pt-4">
+                <a href="#work" class="px-6 py-2 bg-gray-700 text-gray-100 text-sm font-medium hover:bg-gray-600 transition">
+                    View work
+                </a>
+                <a href="https://github.com" target="_blank" class="px-6 py-2 border border-gray-700 text-gray-300 text-sm font-medium hover:border-gray-500 hover:text-gray-100 transition">
+                    GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="work" class="max-w-4xl mx-auto px-6 py-16 border-t border-gray-800">
+        <h2 class="text-2xl font-bold mb-12">Recent Work</h2>
+        
+        <div class="grid md:grid-cols-2 gap-6">
+            <!-- Project 1 -->
+            <div class="project-card border border-gray-700 rounded-lg p-6 bg-gray-900/40 hover:bg-gray-900/60 transition">
+                <div class="h-40 bg-gradient-to-br from-gray-700 to-gray-800 rounded mb-4 flex items-center justify-center">
+                    <span class="text-gray-500 text-sm">Project Preview</span>
+                </div>
+                <h3 class="text-lg font-semibold mb-2">React Dashboard</h3>
+                <p class="text-gray-400 text-sm mb-4">
+                    Real-time data visualization dashboard built with React and Tailwind CSS. Includes filtering, sorting, and responsive design.
+                </p>
+                <div class="flex gap-2 flex-wrap">
+                    <span class="text-xs bg-gray-800 text-gray-300 px-2 py-1 rounded">React</span>
+                    <span class="text-xs bg-gray-800 text-gray-300 px-2 py-1 rounded">Tailwind</span>
+                    <span class="text-xs bg-gray-800 text-gray-300 px-2 py-1 rounded">JavaScript</span>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card border border-gray-700 rounded-lg p-6 bg-gray-900/40 hover:bg-gray-900/60 transition">
+                <div class="h-40 bg-gradient-to-br from-gray-700 to-gray-800 rounded mb-4 flex items-center justify-center">
+                    <span class="text-gray-500 text-sm">Project Preview</span>
+                </div>
+                <h3 class="text-lg font-semibold mb-2">E-commerce Product Page</h3>
+                <p class="text-gray-400 text-sm mb-4">
+                    Fully functional product page with image gallery, checkout flow, and cart management. Mobile-first approach.
+                </p>
+                <div class="flex gap-2 flex-wrap">
+                    <span class="text-xs bg-gray-800 text-gray-300 px-2 py-1 rounded">HTML/CSS</span>
+                    <span class="text-xs bg-gray-800 text-gray-300 px-2 py-1 rounded">JavaScript</span>
+                    <span class="text-xs bg-gray-800 text-gray-300 px-2 py-1 rounded">Responsive</span>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card border border-gray-700 rounded-lg p-6 bg-gray-900/40 hover:bg-gray-900/60 transition">
+                <div class="h-40 bg-gradient-to-br from-gray-700 to-gray-800 rounded mb-4 flex items-center justify-center">
+                    <span class="text-gray-500 text-sm">Project Preview</span>
+                </div>
+                <h3 class="text-lg font-semibold mb-2">Weather App</h3>
+                <p class="text-gray-400 text-sm mb-4">
+                    Weather application with location search, hourly forecasts, and detailed weather data. Built with modern API integration.
+                </p>
+                <div class="flex gap-2 flex-wrap">
+                    <span class="text-xs bg-gray-800 text-gray-300 px-2 py-1 rounded">React</span>
+                    <span class="text-xs bg-gray-800 text-gray-300 px-2 py-1 rounded">API</span>
+                    <span class="text-xs bg-gray-800 text-gray-300 px-2 py-1 rounded">State Management</span>
+                </div>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="project-card border border-gray-700 rounded-lg p-6 bg-gray-900/40 hover:bg-gray-900/60 transition">
+                <div class="h-40 bg-gradient-to-br from-gray-700 to-gray-800 rounded mb-4 flex items-center justify-center">
+                    <span class="text-gray-500 text-sm">Project Preview</span>
+                </div>
+                <h3 class="text-lg font-semibold mb-2">Task Management Tool</h3>
+                <p class="text-gray-400 text-sm mb-4">
+                    Collaborative task management interface with drag-and-drop, real-time updates, and user authentication.
+                </p>
+                <div class="flex gap-2 flex-wrap">
+                    <span class="text-xs bg-gray-800 text-gray-300 px-2 py-1 rounded">Next.js</span>
+                    <span class="text-xs bg-gray-800 text-gray-300 px-2 py-1 rounded">TypeScript</span>
+                    <span class="text-xs bg-gray-800 text-gray-300 px-2 py-1 rounded">Database</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="max-w-4xl mx-auto px-6 py-16 border-t border-gray-800">
+        <h2 class="text-2xl font-bold mb-6">Get in Touch</h2>
+        <p class="text-gray-400 mb-6 max-w-xl">
+            Interested in working together? Reach out via email or check out my work on GitHub. Always happy to discuss projects and opportunities.
+        </p>
+        <div class="flex gap-4">
+            <a href="mailto:your-email@example.com" class="px-6 py-2 bg-gray-700 text-gray-100 text-sm font-medium hover:bg-gray-600 transition">
+                Email me
+            </a>
+            <a href="https://github.com" target="_blank" class="px-6 py-2 border border-gray-700 text-gray-300 text-sm font-medium hover:border-gray-500 hover:text-gray-100 transition">
+                GitHub Profile
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-800 mt-24">
+        <div class="max-w-4xl mx-auto px-6 py-8">
+            <p class="text-gray-500 text-sm">
+                Built with intention. © 2024.
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
